@@ -9,7 +9,8 @@ defmodule Discuss.Plugs.RequireTopicOwner do
   def init(_params) do end
 
   def call(%{params: %{"id" => topic_id}} = conn, _) do
-    if Repo.get(Topic, topic_id).user_id == conn.assigns.user.id do
+    topic = Repo.get(Topic, topic_id)
+    if topic && topic.user_id == conn.assigns.user.id do
       conn
     else
       conn
