@@ -1,6 +1,6 @@
 defmodule Discuss.Plugs.RequireAuth do
   import Plug.Conn, only: [halt: 1]
-  import Phoenix.Controller only: [put_flash: 3, redirect: 2]
+  import Phoenix.Controller, only: [put_flash: 3, redirect: 2]
   
   alias Discuss.Router.Helpers
 
