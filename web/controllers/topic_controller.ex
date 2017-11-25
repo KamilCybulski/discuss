@@ -4,6 +4,8 @@ defmodule Discuss.TopicController do
 
   plug Discuss.Plugs.RequireAuth when action in
     [:new, :create, :edit, :update, :delete]
+  plug Discuss.Plugs.RequireTopicOwner when action in
+    [:edit, :update, :delete]
 
   def new(conn, _params) do
     changeset = Topic.changeset(%Topic{}, %{})
