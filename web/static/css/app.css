@@ -12,17 +12,17 @@
   margin-bottom: 30px;
 }
 
-.topic__title-link {
+.topic__link {
   text-decoration: none;
   color: #000;
 }
 
-.topic__title-link:hover {
+.topic__link:hover {
   text-decoration: none;
   color: #000;
 }
 
-.topic__title-link:active {
+.topic__link:active {
   text-decoration: none;
   color: #000;
 }

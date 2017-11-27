@@ -3,7 +3,7 @@
 <ul class="collection margin-top-medium">
   <%= for topic <- @topics do %>
     <li class="collection-item">
-      <%= link topic.title, to: topic_path(@conn, :show, topic), class: "topic__title-link" %>
+      <%= link topic.title, to: topic_path(@conn, :show, topic), class: "topic__link" %>
       <%= if @conn.assigns.user && @conn.assigns.user.id == topic.user_id do %>
         <div class="right">
           <%= link "Edit", to: topic_path(@conn, :edit, topic) %>
