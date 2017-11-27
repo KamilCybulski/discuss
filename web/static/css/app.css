@@ -11,3 +11,18 @@
   position: relative;
   margin-bottom: 30px;
 }
+
+.topic__title-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.topic__title-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.topic__title-link:active {
+  text-decoration: none;
+  color: #000;
+}
