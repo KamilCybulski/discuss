@@ -1,5 +1,9 @@
 import { Socket } from "phoenix";
 
+
+//================================================================
+// Helpers
+
 const commentTemplate = (comment) => (
   `<li class="collection-item">
     ${comment.content}
@@ -20,8 +24,18 @@ const renderComment = (comment) => {
 
 const handleNewComment = (event) => renderComment(extractComment(event));
 
+
+
+//================================================================
+// Socket connection
+
 const socket = new Socket("/socket", {params: {token: window.userToken}});
 socket.connect();
+
+
+
+//================================================================
+// Socket config
 
 const createSocket = (topicId) => {
   const channel = socket.channel(`comments:${topicId}`, {});
