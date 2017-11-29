@@ -4,11 +4,14 @@ import { Socket } from "phoenix";
 //================================================================
 // Helpers
 
-const commentTemplate = (comment) => (
-  `<li class="collection-item">
+const commentTemplate = (comment) => {
+  const email = comment.user ? comment.user.email : 'Anonymous';
+
+  return `<li class="collection-item">
     ${comment.content}
+    <div class="secondary-content">${email}</div>
   </li>`
-);
+};
 
 const extractComment = (event) => event.comment;
 
